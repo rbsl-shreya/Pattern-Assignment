@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html
+<head>
+	<style>
+	div{		
+		float:left;
+		background-color:orange;
+		color:white;
+		padding:20px 40px 20px 40px;
+		margin:20px;
+		line-height:15px;
+		font-size:21px;
+		}
+	</style>
+</head>
+
+
+<body>
+
+	<div id="patt-1"></div>
+	<div id="patt-2"></div>
+	<div id="patt-3"></div>
+	<div id="patt-4"></div>
+	<div id="patt-5"></div>
+	<div id="patt-6"></div>
+	<div id="patt-7"></div>
+	<div id="patt-8"></div>
+	<div id="patt-9"></div>
+	<div id="patt-10"></div>
+	<div id="patt-11"></div>
+	<div id="patt-12"></div>
+	<div id="patt-13"></div>
+
+	<script>
+		<!-----------------To Resize the patterns, change the value of 'n'---------------->
+		var n=9;																					//Only circle has its own value for radius.
+		var p="* ";
+		
+		<!--------------------------------------Pattern 1-------------------------------------->
+		function patt1() {
+
+			var i,j;
+			for(i=1;i<=n;i++)
+			{
+				for(j=1;j<=i;j++)
+				{
+					if(j==1 || j==i ||i==n)
+						document.getElementById("patt-1").innerHTML += p;
+						
+					else
+						document.getElementById("patt-1").innerHTML += "&nbsp;&nbsp;&nbsp;";
+				}
+				document.getElementById("patt-1").innerHTML += "<br>";
+			}
+		}
+		
+		
+		<!--------------------------------------Pattern 2-------------------------------------->
+		function patt2() {
+
+			var i,j,k;
+			for(i=1;i<=n;i++)
+			{
+				for(k=n;k>i;k--)
+				{
+					document.getElementById("patt-2").innerHTML += "&nbsp;&nbsp;&nbsp;";
+				}
+				for(j=1;j<=i;j++)
+				{
+					if(j==1 || i==n || j==i)
+						document.getElementById("patt-2").innerHTML += p;
+						
+					else
+						document.getElementById("patt-2").innerHTML += "&nbsp;&nbsp;&nbsp;";
+				}
+				document.getElementById("patt-2").innerHTML += "<br>";
+			}
+		}
+		
+		
+		<!--------------------------------------Pattern 3-------------------------------------->
+		function patt3() {
+
+			var i,j;
+			for(i=n;i>=1;i--)
+			{
+				for(j=1;j<=i;j++)
+				{
+					if(j==1 || i==n || j==i)
+						document.getElementById("patt-3").innerHTML += p;
+						
+					else
+						document.getElementById("patt-3").innerHTML += "&nbsp;&nbsp;&nbsp;";
+				}
+				document.getElementById("patt-3").innerHTML += "<br>";
+			}
+		}
+		
+		<!--------------------------------------Pattern 4-------------------------------------->
+		function patt4() {
+
+			var i,j,k;
+			for(i=n;i>=1;i--)
+			{
+				for(k=n;k>i;k--)
+				{
+					document.getElementById("patt-4").innerHTML += "&nbsp;&nbsp;&nbsp;";
+				}
+				for(j=1;j<=i;j++)
+				{
+					if(j==1 || i==n || j==i)
+						document.getElementById("patt-4").innerHTML += p;
+						
+					else
+						document.getElementById("patt-4").innerHTML += "&nbsp;&nbsp;&nbsp;";
+				}
+				document.getElementById("patt-4").innerHTML += "<br>";
+			}
+		}
+		
+		
+		
+		<!--------------------------------------Pattern 5-------------------------------------->
+		function square() {
+
+			var i,j;
+				for(i=1;i<=n;i++)
+				{
+					for(j=1;j<=n+2;j++)
+					{
+						if(i==1|| j==1 || i==n || j==n+2)
+							document.getElementById("patt-5").innerHTML += p;
+						else
+							document.getElementById("patt-5").innerHTML += "&nbsp;&nbsp;&nbsp;";
+					}
+					document.getElementById("patt-5").innerHTML += "<br>";
+				}
+		}
+		
+		
+		<!--------------------------------------Pattern 6-------------------------------------->
+		function rhom() {
+
+			var i,j,k;
+				for(i=1;i<=n;i++)
+				{
+					for(k=n;k>i;k--)
+					{
+						document.getElementById("patt-6").innerHTML += "&nbsp;&nbsp;&nbsp;";
+					}
+					for(j=1;j<=n;j++)
+					{
+						if(i==1|| j==1 || i==n || j==n)
+							document.getElementById("patt-6").innerHTML += p;
+						else
+							document.getElementById("patt-6").innerHTML += "&nbsp;&nbsp;&nbsp;";
+					}
+					document.getElementById("patt-6").innerHTML += "<br>";
+				}
+		}
+		
+		<!--------------------------------------Pattern 7-------------------------------------->
+		function tri() {
+
+			var i,j,p="*";
+			for(i=1;i<=n;i++)
+			{
+				for (j = 1; j <=(2*n)-1; j++)
+				{
+					if (j==(n-i+1)|| i==n || j==(n+i-1))
+					{
+						document.getElementById("patt-7").innerHTML +=p;	
+					}
+					else
+					{
+						document.getElementById("patt-7").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-7").innerHTML += "<br>";
+			}
+		}
+		
+		<!--------------------------------------Pattern 8-------------------------------------->
+		function star() {
+
+			var i,j,p="*";
+			var t= parseInt(n/2);
+			t=t-1;
+			for(i=1;i<=n+t;i++)
+			{
+				for (j = 1; j <= (2*n)-1; j++)
+				{
+					if (j==(n-i+1)|| i==n || j==(n+i-1)||j==i-t|| i==1+t || j==((n*2)-i)+t)
+					{
+						document.getElementById("patt-8").innerHTML +=p;	
+					}
+					else
+					{
+						document.getElementById("patt-8").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-8").innerHTML += "<br>";
+			}
+		}
+		
+		<!--------------------------------------Pattern 9-------------------------------------->
+		function hex() {
+
+			var i,j,k,p="*";
+			var l=7;
+			for(i=1;i<=n;i++)
+			{
+				for(k=n;k>i;k--)
+				{
+					document.getElementById("patt-9").innerHTML += "&nbsp;&nbsp;";
+				}
+				
+				for (j = 1; j <= l; j++)
+				{
+					if (j==1|| j==l ||i==1)
+					{
+						document.getElementById("patt-9").innerHTML +=p;	
+					}
+					else
+					{
+						document.getElementById("patt-9").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-9").innerHTML += "<br>";
+				l+=2;
+			}
+			l-=4;
+			for(i=1;i<=n-1;i++)
+			{
+				for(k=1;k<=i;k++)
+				{
+					document.getElementById("patt-9").innerHTML += "&nbsp;&nbsp;";
+				}
+				
+				for (j = 1; j <=l; j++)
+				{
+					if (j==1|| j==l ||i==n-1)
+					{
+						document.getElementById("patt-9").innerHTML +=p;	
+					}
+					else
+					{
+						document.getElementById("patt-9").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-9").innerHTML += "<br>";
+				l-=2;
+			}
+		}
+		
+		
+		
+		<!--------------------------------------Pattern 10-------------------------------------->
+		function dimond() {
+
+			var i,j,k,l,p="*";
+			for(i=1;i<=n;i++)
+			{
+				for(k=n;k>i;k--)
+				{
+					document.getElementById("patt-10").innerHTML += "&nbsp;&nbsp;";
+				}
+				
+				for (j = 1; j <= (2*i)-1; j++)
+				{
+					if (j==1|| j==(2*i)-1)
+					{
+						document.getElementById("patt-10").innerHTML +=p;	
+					}
+					else
+					{
+						document.getElementById("patt-10").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-10").innerHTML += "<br>";
+			}
+	
+			for(i=n-1;i>=1;i--)
+			{
+				for(k=1;k<=n-i;k++)
+				{
+					document.getElementById("patt-10").innerHTML += "&nbsp;&nbsp;";
+				}
+				
+				for (j = 1; j <= (2*i)-1; j++)
+				{
+					if (j==1|| j==(2*i)-1)
+					{
+						document.getElementById("patt-10").innerHTML +=p;	
+					}
+					else
+					{
+						document.getElementById("patt-10").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-10").innerHTML += "<br>";
+			}
+		}
+		
+		
+		
+			<!--------------------------------------Pattern 11-------------------------------------->
+		
+			function hut() {
+
+			var i,j,k,p="*";
+			var l=n*2;
+			var t= parseInt(n/2);
+			t=t-1;
+			
+			for(i=1;i<=n;i++)
+			{
+				for(k=n;k>i;k--)
+				{
+					document.getElementById("patt-11").innerHTML += "&nbsp;&nbsp;";
+				}
+				
+				for (j = 1; j <= l; j++)
+				{
+					if (j==1|| j==l ||i==1 || i==n)
+					{
+						document.getElementById("patt-11").innerHTML +=p;	
+					}
+					else
+					{		
+						if (j==(2*i)-1)
+						{
+							document.getElementById("patt-11").innerHTML +=p;	
+						}
+						else
+							document.getElementById("patt-11").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-11").innerHTML += "<br>";
+				l+=2;
+			}
+			
+			l-=2;
+			
+			for(i=1;i<=n;i++)
+			{
+			
+				for (j = 1; j <= l; j++)
+				{
+					if (j==l ||j==1 || i==n ||j==n*2-1)
+					{
+						document.getElementById("patt-11").innerHTML +=p;	
+					}
+					else
+					{
+						
+						if(i>=t&&(j>=n-t && j<=n+t))
+						{
+							if(i>t&&(j>n-t && j<n+t))
+								document.getElementById("patt-11").innerHTML +="&nbsp;&nbsp;";	
+							else
+							document.getElementById("patt-11").innerHTML +=p;	
+						}
+						else
+							document.getElementById("patt-11").innerHTML +="&nbsp;&nbsp;";	
+					}
+				}
+				document.getElementById("patt-11").innerHTML += "<br>";
+			}
+		}
+	<!--------------------------------------circle--------------------------------------!>	
+		function circle() {
+
+			var i,j,r=10,p=" *";
+			var a,b;
+			
+				for(i=0;i<=(r*2);i++)
+				{
+					for(j=0;j<=(r*2);j++)
+					{
+						a=(i-r)*(i-r);
+						b=(j-r)*(j-r);
+						if((a+b)==(r*r))
+						{	
+							
+							document.getElementById("patt-12").innerHTML +=p;
+						}
+						else
+							document.getElementById("patt-12").innerHTML += "&nbsp;&nbsp;&nbsp;";
+					}
+					document.getElementById("patt-12").innerHTML += "<br>";
+				}
+		}
+	<!--------------------------------------circle_tri--------------------------------------!>	
+		function cir_tri() {
+
+			var i,j,r=10,p="* ";
+			var a,b,n;
+			n=r;
+			
+				for(i=0;i<=(r*2);i++)
+				{
+					for(j=0;j<=(r*2);j++)
+					{
+						a=(i-r)*(i-r);
+						b=(j-r)*(j-r);
+						if((a+b)==(r*r))
+						{	
+							document.getElementById("patt-13").innerHTML +=p;
+						}
+						else
+						{
+							if (j==(n-i)|| i==n|| j==(n+i))
+							{
+								document.getElementById("patt-13").innerHTML +=p;	
+							}
+							else
+								document.getElementById("patt-13").innerHTML += "&nbsp;&nbsp;&nbsp;";
+						}
+					}
+					document.getElementById("patt-13").innerHTML += "<br>";
+				}
+		}
+		
+		<!--------------------------------------Function Calling--------------------------------------!>
+		patt1();
+		patt2();
+		patt3();
+		patt4();
+		square();
+		rhom();
+		tri();
+		star();
+		hex();
+		dimond();
+		hut();
+		circle();
+		cir_tri()
+
+	</script>
+
+</body>
+</html>
+
+
